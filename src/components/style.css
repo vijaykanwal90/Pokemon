@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: blanchedalmond;
+
+}
+.container{
+    width: 90%;
+    display: flex;
+    padding: 100px;
+    margin: auto;
+}
+.leftContent , .rightContent{
+    flex-basis: 50%;
+}
+.leftContent{
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(200px , 0.5fr)); */
+    grid-template-columns: repeat(2, 1fr);
+    
+    grid-gap: 2rem;
+}
+.cardItem{
+    width: 300px;
+    display: flex;
+    background-color: aquamarine;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    padding:0 1.5rem;
+    box-shadow:0 5px 5px 5px rgba(0,0,0,0.5);
+    /* background-color: rgb(14, 7, 7); */
+    color: blue;
+}
+.cardItem img{
+width: 40px;
+}
+.rightContent{
+    width: 50%;
+    top: 100px;
+    right: 10px;
+    position: fixed;
+    text-align: center;
+    align-items: center;
+}
+.rightContent img{
+    width: 200px;
+    margin: 2rem;
+}
+.rightContent h1{
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.abilities{
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+ width: 30%;
+ margin: auto;
+ margin-top: 1rem;
+}
+.group{
+    color: white;
+ background-color: palevioletred;
+ border-radius: 8px;
+ padding: 0.5rem;
+ font-size: 12px;
+}
+.base-state{
+    margin-top: 2rem;
+    
+}
+/* .abilities span{
+    background-color: rebeccapurple;
+    border-radius: 5%;
+    width: 40px;
+    margin: 10px;
+} */
