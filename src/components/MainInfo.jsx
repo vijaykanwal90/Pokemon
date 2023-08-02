@@ -8,15 +8,19 @@ const MainInfo = () => {
   const [pokeData, setPokeData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/");
+  const[pokeDex, setPokeDex] = useState();
+
+  // fir buttons
   const [nextUrl, setNextUrl] = useState();
   const [prevUrl, setPrevUrl] = useState();
   const pokeFun = async () => {
     setLoading(true);
     const res = await axios.get(url);
     setNextUrl(res.data.next);
+    console.log("hello");
     setPrevUrl(res.data.previous);
     // console.log(res.data.results);
-    getPokemon(res.data.results);
+    // getPokemon(res.data.results);
     setLoading(false);
     // console.log(pokeData)
   }
@@ -40,14 +44,25 @@ const MainInfo = () => {
     <>
       <div className="container">
         <div className="leftContent">
-          <Card pokemon={pokeData} loading={loading} />
+          <Card pokemon={pokeData} loading={loading} infoPokemon={poke=>setPokeDex(poke)} />
+         
+         
+         {/* buttons */}
           <div className="buttons">
-            <button>Previous</button>
-            <button>Next</button>
+            { prevUrl && <button onClick={()=>{
+              setPokeData([])
+              setUrl(prevUrl)
+            }}>Previous</button>}
+           { nextUrl && <button onClick={()=>{
+              setPokeData([])
+ 
+              setUrl(nextUrl)
+            }}>Next</button>}
           </div>
         </div>
+        {/* right content */}
         <div className="rightContent">
-          <PokeInfo />
+          <PokeInfo  data={pokeDex}/>
 
         </div>
       </div>
