@@ -17,10 +17,10 @@ const MainInfo = () => {
     setLoading(true);
     const res = await axios.get(url);
     setNextUrl(res.data.next);
-    console.log("hello");
+    // console.log("hello");
     setPrevUrl(res.data.previous);
-    // console.log(res.data.results);
-    // getPokemon(res.data.results);
+    console.log(res.data.results[0]);
+    getPokemon(res.data.results);
     setLoading(false);
     // console.log(pokeData)
   }
