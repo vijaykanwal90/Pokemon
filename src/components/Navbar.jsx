@@ -7,8 +7,8 @@ const Navbar = () => {
       <nav className='Navbar'>
         <ul>
             <li>Pokemon</li>
-            <li>Marvel</li>
-            <li>About</li>
+            
+          
         </ul>
       </nav>
     </>
